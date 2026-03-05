@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotizador Express</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <main class="contenedor">
+    <h1>Cotizador Express</h1>
+    <p class="sub">Calcula subtotal, descuentos, recargos, IVA y total.</p>
+
+    <!-- Mensajes de validación -->
+    <p id="msg" class="msg"></p>
+
+    <!-- Panel de entradas -->
+    <section class="panel">
+      <div class="campo">
+        <label for="selProducto">Producto</label>
+        <select id="selProducto">
+          <option value="cafe">Café</option>
+          <option value="sandwich">Sándwich</option>
+          <option value="jugo">Jugo</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="txtPrecio">Precio unitario</label>
+        <input id="txtPrecio" type="number" min="0" step="1" />
+      </div>
+
+      <div class="campo">
+        <label for="txtCantidad">Cantidad</label>
+        <input id="txtCantidad" type="number" min="1" step="1" />
+      </div>
+
+      <div class="campo inline">
+        <input id="chkFrecuente" type="checkbox" />
+        <label for="chkFrecuente">Cliente frecuente (+3% desc)</label>
+      </div>
+
+      <div class="campo">
+        <label for="selPago">Método de pago</label>
+        <select id="selPago">
+          <option value="efectivo">Efectivo</option>
+          <option value="tarjeta">Tarjeta (+2% recargo)</option>
+        </select>
+      </div>
+
+      <button id="btnCalcular" type="button">Calcular</button>
+    </section>
+
+    <!-- Panel de resultados -->
+    <section class="resultados">
+      <h2>Resultados</h2>
+
+      <div class="fila">
+        <span>Subtotal</span>
+        <strong id="spSubtotal">$0</strong>
+      </div>
+
+      <div class="fila">
+        <span>Descuento</span>
+        <strong id="spDescuento">$0</strong>
+      </div>
+
+      <div class="fila">
+        <span>Recargo</span>
+        <strong id="spRecargo">$0</strong>
+      </div>
+
+      <div class="fila">
+        <span>IVA (19%)</span>
+        <strong id="spIva">$0</strong>
+      </div>
+
+      <div class="fila total">
+        <span>Total</span>
+        <strong id="spTotal">$0</strong>
+      </div>
+
+      <p class="resumen">Resumen: <span id="spResumen">—</span></p>
+    </section>
+  </main>
+
+  <!-- JS al final para que el DOM exista cuando el script se ejecute -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
